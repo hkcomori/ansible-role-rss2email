@@ -1,2 +1,29 @@
 ---
-# tasks file for rss2email
+- name: Inatall rss2email
+  apt:
+    name:
+      - rss2email
+    state: present
+
+- name: Ensure user
+  user:
+    name: "{{ rss2email_user }}"
+    state: "present"
+
+- name: Ensure user config directory is present
+  file:
+    path: "~{{ rss2email_user }}/.config"
+    state: "directory"
+    owner: "{{ rss2email_user }}"
+    group: "{{ rss2email_user }}"
+    mode: "0755"
+
+- name: Configure rss2email.cfg
+  vars:
+    autostart_user: "{{ item.0.name }}"
+  template:
+    src: "rss2email.cfg.j2"
+    dest: "~{{ rss2email }}/.config/rss2email.cfg"
+    owner: "{{ rss2email_user }}"
+    group: "{{ rss2email_user }}"
+    mode: "0600"

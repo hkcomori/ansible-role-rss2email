@@ -1,0 +1,83 @@
+[DEFAULT]
+from = {{ rss2email_from }}
+user-agent = rss2email/__VERSION__ (__URL__)
+use-8bit = False
+force-from = False
+use-publisher-email = False
+name-format = {{ rss2email_name_format }}
+to = {{ rss2email_to }}
+proxy =
+feed-timeout = {{ rss2email_feed_timeout }}
+same-server-fetch-interval = 0
+active = True
+digest = False
+date-header = False
+date-header-order = modified, issued, created, expired
+bonus-header =
+trust-guid = True
+trust-link = False
+encodings = US-ASCII, ISO-8859-1, UTF-8, BIG5, ISO-2022-JP
+post-process =
+digest-post-process =
+html-mail = {{ rss2email_html_mail }}
+use-css = {{ rss2email_use_css }}
+css = h1 {
+          font: 18pt Georgia, "Times New Roman";
+        }
+        body {
+          font: 12pt Arial;
+        }
+        a:link {
+          font: 12pt Arial;
+          font-weight: bold;
+          color: #0000cc;
+        }
+        blockquote {
+          font-family: monospace;
+        }
+        .header {
+          background: #e0ecff;
+          border-bottom: solid 4px #c3d9ff;
+          padding: 5px;
+          margin-top: 0px;
+          color: red;
+        }
+        .header a {
+          font-size: 20px;
+          text-decoration: none;
+        }
+        .footer {
+          background: #c3d9ff;
+          border-top: solid 4px #c3d9ff;
+          padding: 5px;
+          margin-bottom: 0px;
+        }
+        #entry {
+          border: solid 4px #c3d9ff;
+        }
+        #body {
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+
+unicode-snob = False
+links-after-each-paragraph = False
+body-width = 0
+email-protocol = {{ rss2email_email_protocol }}
+sendmail = {{ rss2email_sendmail }}
+smtp-auth = {{ rss2email_smtp_auth }}
+smtp-username = {{ rss2email_smtp_username }}
+smtp-password = {{ rss2email_smtp_password }}
+smtp-server = {{ rss2email_smtp_server }}
+smtp-port = {{ rss2email_smtp_port }}
+smtp-ssl = {{ rss2email_smtp_ssl }}
+imap-auth = False
+imap-username = username
+imap-password = password
+imap-server = imap.example.net
+imap-port = 143
+imap-ssl = False
+imap-mailbox = INBOX
+maildir-path = ~/Maildir
+maildir-mailbox = INBOX
+verbose = info

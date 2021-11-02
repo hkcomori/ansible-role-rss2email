@@ -1,2 +1,20 @@
 ---
 # defaults file for rss2email
+rss2email_from: "user@rss2email.invalid"
+rss2email_name_format: "{feed-title}: {author}"
+rss2email_feed_timeout: "60"
+
+rss2email_html_mail: "False"
+rss2email_use_css: "False"
+
+
+rss2email_email_protocol = "sendmail"
+
+rss2email_sendmail = "/usr/sbin/sendmail"
+
+rss2email_smtp_auth: "False"
+rss2email_smtp_username: "username"
+rss2email_smtp_password: "password"
+rss2email_smtp_server: "smtp.example.net"
+rss2email_smtp_port = "465"
+rss2email_smtp_ssl = "False"
