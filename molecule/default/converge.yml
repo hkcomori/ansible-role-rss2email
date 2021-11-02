@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include rss2email"
+      include_role:
+        name: "rss2email"
